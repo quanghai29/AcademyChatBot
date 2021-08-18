@@ -32,7 +32,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "udemallchatbot" #Must be unique in Heroku
           heroku_email: "lequanghai540@gmail.com"
-          procfile: "web: node backend/chatbot.js"
+          procfile: "web: npm start"
       env:
           HD_DB_HOST: 181.215.242.79
           HD_DB_PORT: 19765
