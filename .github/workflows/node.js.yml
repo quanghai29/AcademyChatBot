@@ -1,0 +1,46 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install server dependencies
+      run: npm i
+    - name: Deloy to host
+      uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "udemallchatbot" #Must be unique in Heroku
+          heroku_email: "lequanghai540@gmail.com"
+          procfile: "web: node backend/chatbot.js"
+      env:
+          HD_DB_HOST: 181.215.242.79
+          HD_DB_PORT: 19765
+          HD_DB_USER: ${{secrets.DB_USER}}
+          HD_DB_PASSWORD: ${{secrets.DB_PASSWORD}}
+          HD_DB_NAME: online_academy
+          HD_NODE_ENVIROMMENT: pro
+          HD_HOST:  https://udemallchatbot.herokuapp.com/
+          HD_HOST_NAME: https://udemallchatbot.herokuapp.com/
+          HD_URL: https://udemallchatbot.herokuapp.com/
+  
