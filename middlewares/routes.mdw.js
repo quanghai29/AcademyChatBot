@@ -5,11 +5,11 @@ const {ROLE_STUDENT, ROLE_LECTURER, ROLE_ADMIN} = require('../helper/common.help
 
 module.exports = function (app) {
   // link default
-  app.get('/', (req, res) => {
-    res.json({
-      message: 'Hello from Online Course API',
-    });
-  });
+  // app.get('/', (req, res) => {
+  //   res.json({
+  //     message: 'Hello from Online Course API',
+  //   });
+  // });
 
   // link api documents
   app.use("/api-docs",

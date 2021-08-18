@@ -4,8 +4,8 @@
   "description": "online course backend",
   "main": "app.js",
   "scripts": {
-    "start": "node backend/chatbot",
-    "server": "nodemon backend/chatbot.js",
+    "start": "node app",
+    "server": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint '*.js''"
   },
