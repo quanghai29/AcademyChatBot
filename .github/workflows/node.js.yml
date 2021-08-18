@@ -43,7 +43,7 @@ jobs:
           HD_HOST:  https://udemallchatbot.herokuapp.com/
           HD_HOST_NAME: https://udemallchatbot.herokuapp.com/
           HD_URL: https://udemallchatbot.herokuapp.com/
-          HD_PAGE_ACCESS_TOKEN: ${{secrets.PAGE_ACESS_TOKEN}}
+          HD_PAGE_ACCESS_TOKEN: EAAHJzrPX4rcBABdySniO5rE0FxxZBQjzLJGWmpSq8LCzcVQqP5QKGycexgNrUmcQSzXanxSfcMj65vZCk3g1RLXC0RhYTCiIV82RTMDZCu1YIJnaZCUnpZCHQTPMXnQWjwLsbAC2fz36hsECmhpwpaPEsZBn10YdDaUnvPLAcZAqScjxE3e2yfb
           HD_VERIFY_TOKEN: ${{secrets.VERIFY_TOKEN}}
           
   
