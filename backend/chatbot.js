@@ -191,7 +191,7 @@ function callSendAPI(senderPsid, response) {
 // middleware error
 require('./middlewares/error.mdw')(bot);
 
-const  PORT  = process.env.PORT_BOT;
+const  PORT  = process.env.PORT;
 bot.listen(PORT, () => {
   console.log(`Bot is runing at ${process.env.HOST_NAME}:${PORT}`);
 });
